@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Posts
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Buy your dream car</h1>
+    {% if posts|length > 0 %}
+        {% for el in posts %}
+        <div class="alert alert-info">
+            <h2>First name: {{ el.firstName }}</h2>
+            <p>Phone: {{ el.phone }}</p>
+            <p>Price: {{ el.price }}</p>
+            <p><b>Date: {{ el.date.date() }}</b></p>
+            <a href="{{url_for('posts_detail', id=el.id)}}" class="btn btn-warning">More</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>We do not have any posts yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

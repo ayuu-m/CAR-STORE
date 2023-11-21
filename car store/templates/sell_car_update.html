@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Update
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Update</h1>
+   <form class="needs-validation" method="post" action="/create" novalidate>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Name:</label>
+              <input type="text" class="form-control" value="{{ user_post.firstName }}" id="firstName" name="firstName" required>
+              <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+<div class="col-sm-6">
+              <label for="phone" class="form-label">Phone:</label>
+              <input type="text" class="form-control" value="{{ user_post.phone }}" id="phone" name="phone" required>
+              <div class="invalid-feedback">
+                Valid phone is required.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email<span class="text-body-secondary">(Optional):</span></label>
+              <input type="text" class="form-control" value="{{ user_post.email }}"  id="email" name="email" placeholder="you@example.com">
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+        <div class="col-12">
+              <label for="description" class="form-label">Description:</label>
+              <input type="text" class="form-control" value="{{ user_post.description }}"  id="description" name="email">
+              <div class="invalid-feedback">
+                Please enter a valid description.
+              </div>
+            </div>
+
+         <div class="col-12">
+              <label for="price" class="form-label">Price:</label>
+              <input type="text" class="form-control" value="{{ user_post.price }}"  id="price" name="price">
+              <div class="invalid-feedback">
+                Please enter a valid price.
+              </div>
+            </div>
+
+    <hr class="my-4">
+     <div class="container">
+    <input type="submit" class="btn btn-success" value="Update">
+    </div>
+</div>
+   </form>
+</div>
+{% endblock %}

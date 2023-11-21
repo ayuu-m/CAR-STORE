@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Details
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Details</h1>
+
+    <div class="alert alert-info">
+        <p>Name: {{ post.firstName }}</p>
+        <p>Phone: {{ post.phone }}</p>
+        <p>Photo: {{ post.photo }}</p>
+        <p>Email: {{ post.email }}</p>
+        <p>Description: {{ post.description }}</p>
+        <p>Price: {{ post.price }}</p>
+        <p><b>Date: {{ post.date }}</b></p>
+        <a href="/posts/{{post.id}}/delete" class="btn btn-danger">Delete</a>
+        <a href="/posts/{{ post.id }}/update" class="btn btn-success">Edit</a>
+    </div>
+</div>
+{% endblock %}

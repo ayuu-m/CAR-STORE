@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+{% block body %}
+<div class="container">
+        <h1>Register</h1>
+    <form class="needs-validation" method="post" action="/register" novalidate>
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+                <div class="invalid-feedback">
+                    Valid username is required.
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+                <div class="invalid-feedback">
+                    Valid password is required.
+                </div>
+
+                <hr class="my-6">
+                <div class="container">
+                    <input type="submit" class="btn btn-success" value="Register">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
